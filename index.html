@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSMOBILES A4 Bill</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bill" id="billContent">
+  <h1>MSMOBILES</h1>
+  <div class="shop-info">
+    <p>Address: Luna Nager Bus Stop, Thadagam Road, Edayarpalayam, Coimbatore - 641025</p>
+    <p>Contact: 8248108883</p>
+    <p>Promotion: All brand mobiles, accessories & services available</p>
+  </div>
+  <div class="customer-info">
+    <p>Customer Name: <input type="text" id="custName" placeholder="Enter name"></p>
+    <p>Date: <span id="billDate"></span></p>
+  </div>
+
+  <div class="controls">
+    <select id="category">
+      <option value="Mobile">Mobile</option>
+      <option value="Bluetooth">Bluetooth</option>
+      <option value="Charger">Charger</option>
+      <option value="Cable">Cable</option>
+      <option value="Accessory">Accessory</option>
+      <option value="Service">Service</option>
+      <option value="Other">Other</option>
+    </select>
+    <input type="text" id="brand" placeholder="Brand">
+    <input type="text" id="model" placeholder="Model">
+    <input type="text" id="variant" placeholder="Variant">
+    <input type="number" id="qty" placeholder="Qty" value="1" style="width:60px">
+    <input type="number" id="price" placeholder="Price" value="0" style="width:80px">
+    <input type="text" id="sn" placeholder="SN">
+    <input type="text" id="imei" placeholder="IMEI">
+    <button id="addItem">Add Item</button>
+  </div>
+
+  <table id="itemsTable">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Category</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Variant</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>SN Barcode</th>
+        <th>IMEI Barcode</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot>
+      <tr>
+        <td colspan="9" class="totals">Grand Total</td>
+        <td id="grandTotal">₹0.00</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="seal-sign">
+    <div class="box">Seal / Company Stamp</div>
+    <div class="box">Customer Signature</div>
+  </div>
+
+  <div class="thanks">THANK YOU — VISIT AGAIN</div>
+  <div class="festival-msg" id="festivalMsg">Wishing You a Happy Diwali!</div>
+  <div class="qr-container" id="locationQR"></div>
+</div>
+
+<div class="no-print">
+  <label><input type="checkbox" id="showFestival" class="optional-checkbox"> Show Diwali Greeting</label>
+  <button onclick="generateBill()">Generate Bill</button>
+  <button onclick="printBill()">Print Bill</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
