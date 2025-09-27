@@ -26,10 +26,6 @@ h1 {
   font-size: 13px;
 }
 
-.shop-info p, .customer-info p {
-  margin: 2px 0;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
